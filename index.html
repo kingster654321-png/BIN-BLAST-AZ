@@ -16,17 +16,28 @@
       --card: #102b42;
       --dark: #04111d;
     }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: var(--dark);
       color: var(--white);
       line-height: 1.6;
     }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(1120px, 92%); margin: auto; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
     .btn {
       display: inline-block;
       padding: 13px 20px;
@@ -35,10 +46,20 @@
       border: 0;
       cursor: pointer;
       transition: transform .2s, opacity .2s;
+      text-align: center;
     }
-    .btn:hover { transform: translateY(-2px); opacity: .9; }
-    .btn-primary { background: var(--green); color: #05200e; }
-    .btn-secondary { border: 1px solid rgba(255,255,255,.3); background: transparent; }
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: .9;
+    }
+    .btn-primary {
+      background: var(--green);
+      color: #05200e;
+    }
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,.3);
+      background: transparent;
+    }
     header {
       position: sticky;
       top: 0;
@@ -54,23 +75,67 @@
       justify-content: space-between;
       gap: 20px;
     }
-    .logo { font-size: 1.25rem; font-weight: 900; letter-spacing: .5px; }
-    .logo span { color: var(--cyan); }
-    .nav-links { display: flex; gap: 22px; align-items: center; font-size: .95rem; }
-    .nav-links a:hover { color: var(--cyan); }
-    .menu-btn { display: none; background: none; color: white; border: 1px solid #486174; border-radius: 8px; padding: 8px 11px; font-size: 1.2rem; }
-
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: .5px;
+    }
+    .logo span {
+      color: var(--cyan);
+    }
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      font-size: .95rem;
+    }
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+    .menu-btn {
+      display: none;
+      background: none;
+      color: white;
+      border: 1px solid #486174;
+      border-radius: 8px;
+      padding: 8px 11px;
+      font-size: 1.2rem;
+    }
     .hero {
       padding: 95px 0 80px;
       background:
         radial-gradient(circle at 85% 20%, rgba(14,165,233,.25), transparent 35%),
         linear-gradient(135deg, #082238, #04111d 65%);
     }
-    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 45px; align-items: center; }
-    .eyebrow { color: var(--cyan); text-transform: uppercase; font-weight: 800; letter-spacing: 1.5px; font-size: .8rem; }
-    h1 { font-size: clamp(2.5rem, 6vw, 4.8rem); line-height: 1.05; margin: 15px 0 20px; }
-    .hero p { color: var(--muted); max-width: 570px; font-size: 1.08rem; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 45px;
+      align-items: center;
+    }
+    .eyebrow {
+      color: var(--cyan);
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      font-size: .8rem;
+    }
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.8rem);
+      line-height: 1.05;
+      margin: 15px 0 20px;
+    }
+    .hero p {
+      color: var(--muted);
+      max-width: 570px;
+      font-size: 1.08rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
     .hero-card {
       background: linear-gradient(145deg, #123b57, #0b2235);
       border: 1px solid rgba(103,232,249,.25);
@@ -78,64 +143,174 @@
       padding: 30px;
       box-shadow: 0 20px 60px rgba(0,0,0,.3);
     }
-    .bin-art { font-size: 8rem; text-align: center; margin: 10px 0; }
-    .hero-card h3 { text-align: center; font-size: 1.35rem; }
-    .hero-card p { text-align: center; margin: 8px auto 0; font-size: .95rem; }
-
-    section { padding: 80px 0; }
-    .section-heading { text-align: center; max-width: 650px; margin: 0 auto 40px; }
-    .section-heading h2 { font-size: clamp(2rem, 4vw, 3rem); margin: 8px 0 12px; }
-    .section-heading p { color: var(--muted); }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .bin-art {
+      font-size: 8rem;
+      text-align: center;
+      margin: 10px 0;
+    }
+    .hero-card h3 {
+      text-align: center;
+      font-size: 1.35rem;
+    }
+    .hero-card p {
+      text-align: center;
+      margin: 8px auto 0;
+      font-size: .95rem;
+    }
+    section {
+      padding: 80px 0;
+    }
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 40px;
+    }
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 8px 0 12px;
+    }
+    .section-heading p {
+      color: var(--muted);
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
     .card {
       background: var(--card);
       border: 1px solid rgba(255,255,255,.08);
       padding: 28px;
       border-radius: 20px;
     }
-    .card .icon { font-size: 2rem; }
-    .card h3 { margin: 14px 0 8px; }
-    .card p { color: var(--muted); font-size: .95rem; }
-
-    .pricing { background: #071e30; }
-    .price { font-size: 2.3rem; font-weight: 900; margin: 10px 0; color: var(--cyan); }
-    .card ul { list-style: none; color: var(--muted); margin: 15px 0 22px; }
-    .card li { margin: 8px 0; }
-    .card li::before { content: "✓ "; color: var(--green); font-weight: 900; }
-
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; align-items: center; }
-    .about-box { background: linear-gradient(145deg, #0c3048, #0a1e30); border-radius: 25px; padding: 35px; }
-    .about-box h2 { font-size: 2.2rem; line-height: 1.15; margin: 10px 0 15px; }
-    .about-box p { color: var(--muted); }
-    .checks { margin-top: 22px; list-style: none; }
-    .checks li { margin: 12px 0; }
-
-    .booking { background: #061725; }
-    form { max-width: 760px; margin: auto; background: var(--card); padding: 30px; border-radius: 22px; }
-    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    label { display: block; font-weight: 700; font-size: .9rem; margin-bottom: 6px; }
-    input, select, textarea {
-      width: 100%;
-      border: 1px solid #456276;
-      background: #071a2b;
-      color: white;
-      padding: 13px;
-      border-radius: 10px;
-      font: inherit;
+    .card .icon {
+      font-size: 2rem;
     }
-    textarea { min-height: 120px; resize: vertical; }
-    .full { grid-column: 1 / -1; }
-    form .btn { width: 100%; margin-top: 8px; }
-    .form-note { color: var(--muted); text-align: center; font-size: .8rem; margin-top: 12px; }
-
-    footer { padding: 30px 0; border-top: 1px solid rgba(255,255,255,.1); color: var(--muted); }
-    .footer-flex { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-    .small { font-size: .85rem; }
-
+    .card h3 {
+      margin: 14px 0 8px;
+    }
+    .card p {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    .pricing {
+      background: #071e30;
+    }
+    .price {
+      font-size: 2.3rem;
+      font-weight: 900;
+      margin: 10px 0;
+      color: var(--cyan);
+    }
+    .card ul {
+      list-style: none;
+      color: var(--muted);
+      margin: 15px 0 22px;
+    }
+    .card li {
+      margin: 8px 0;
+    }
+    .card li::before {
+      content: "✓ ";
+      color: var(--green);
+      font-weight: 900;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+    .about-box {
+      background: linear-gradient(145deg, #0c3048, #0a1e30);
+      border-radius: 25px;
+      padding: 35px;
+    }
+    .about-box h2 {
+      font-size: 2.2rem;
+      line-height: 1.15;
+      margin: 10px 0 15px;
+    }
+    .about-box p {
+      color: var(--muted);
+    }
+    .checks {
+      margin-top: 22px;
+      list-style: none;
+    }
+    .checks li {
+      margin: 12px 0;
+    }
+    .booking {
+      background: #061725;
+    }
+    .booking-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 850px;
+      margin: auto;
+    }
+    .booking-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 22px;
+      padding: 30px;
+      text-align: center;
+    }
+    .booking-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+    .booking-price {
+      color: var(--cyan);
+      font-size: 2rem;
+      font-weight: 900;
+      margin: 8px 0;
+    }
+    .booking-time {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .booking-card .btn {
+      width: 100%;
+    }
+    .weekend-label {
+      color: var(--green);
+      font-weight: 800;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid rgba(255,255,255,.1);
+      color: var(--muted);
+    }
+    .footer-flex {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .small {
+      font-size: .85rem;
+    }
     @media (max-width: 800px) {
-      .hero-grid, .about-grid { grid-template-columns: 1fr; }
-      .cards { grid-template-columns: 1fr 1fr; }
-      .hero { padding-top: 65px; }
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+      .booking-options {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        padding-top: 65px;
+      }
       .nav-links {
         display: none;
         position: absolute;
@@ -147,19 +322,33 @@
         flex-direction: column;
         border-bottom: 1px solid #294154;
       }
-      .nav-links.open { display: flex; }
-      .menu-btn { display: block; }
+      .nav-links.open {
+        display: flex;
+      }
+      .menu-btn {
+        display: block;
+      }
     }
-
     @media (max-width: 520px) {
-      section { padding: 60px 0; }
-      .cards, .form-grid { grid-template-columns: 1fr; }
-      .full { grid-column: auto; }
-      .hero-actions { flex-direction: column; align-items: stretch; }
-      .hero-actions .btn { text-align: center; }
-      .hero-card { padding: 22px; }
-      .bin-art { font-size: 6rem; }
-      form { padding: 20px; }
+      section {
+        padding: 60px 0;
+      }
+      .cards {
+        grid-template-columns: 1fr;
+      }
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .hero-actions .btn {
+        text-align: center;
+      }
+      .hero-card {
+        padding: 22px;
+      }
+      .bin-art {
+        font-size: 6rem;
+      }
     }
   </style>
 </head>
@@ -168,7 +357,9 @@
     <div class="container">
       <nav>
         <a class="logo" href="#home">BIN <span>BLAST AZ</span> 🗑️</a>
-        <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+        <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">
+          ☰
+        </button>
         <div class="nav-links" id="navLinks">
           <a href="#services" onclick="closeMenu()">Services</a>
           <a href="#pricing" onclick="closeMenu()">Pricing</a>
@@ -178,63 +369,141 @@
       </nav>
     </div>
   </header>
-
   <main>
+    <!-- HERO -->
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Serving Phoenix, Arizona</div>
-          <h1>Dirty Bin?<br><span style="color:var(--cyan)">We Blast It Clean.</span></h1>
-          <p>Professional trash-bin cleaning and pressure washing that helps your bins look, smell, and feel fresh.</p>
+          <h1>
+            Dirty Bin?<br>
+            <span style="color:var(--cyan)">We Blast It Clean.</span>
+          </h1>
+          <p>
+            Professional trash-bin cleaning and pressure washing that helps
+            your bins look, smell, and feel fresh.
+          </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#booking">Book a Cleaning</a>
-            <a class="btn btn-secondary" href="#services">View Services</a>
+            <a class="btn btn-primary" href="#booking">
+              Book a Cleaning
+            </a>
+            <a class="btn btn-secondary" href="#services">
+              View Services
+            </a>
           </div>
         </div>
         <div class="hero-card">
           <div class="bin-art">🗑️💦</div>
           <h3>Fresh Bins. Cleaner Neighborhoods.</h3>
-          <p>Reliable service for homes, families, and local businesses across Phoenix, Arizona.</p>
+          <p>
+            Reliable service for homes, families, and local businesses
+            across Phoenix, Arizona.
+          </p>
         </div>
       </div>
     </section>
-
+    <!-- SERVICES -->
     <section id="services">
       <div class="container">
         <div class="section-heading">
           <div class="eyebrow">What We Do</div>
           <h2>Our Services</h2>
-          <p>Simple, effective cleaning for bins that need a serious refresh.</p>
+          <p>
+            Simple, effective cleaning for bins that need a serious refresh.
+          </p>
         </div>
         <div class="cards">
-          <article class="card"><div class="icon">💦</div><h3>Pressure Washing</h3><p>High-pressure cleaning helps remove built-up dirt, grime, and residue.</p></article>
-          <article class="card"><div class="icon">🧼</div><h3>Deep Cleaning</h3><p>We focus on the inside and outside of your trash bin for a cleaner finish.</p></article>
-          <article class="card"><div class="icon">🌿</div><h3>Deodorizing</h3><p>Freshen up your bin and help reduce unpleasant trash odors.</p></article>
+          <article class="card">
+            <div class="icon">💦</div>
+            <h3>Pressure Washing</h3>
+            <p>
+              High-pressure cleaning helps remove built-up dirt,
+              grime, and residue.
+            </p>
+          </article>
+          <article class="card">
+            <div class="icon">🧼</div>
+            <h3>Deep Cleaning</h3>
+            <p>
+              We focus on the inside and outside of your trash bin
+              for a cleaner finish.
+            </p>
+          </article>
+          <article class="card">
+            <div class="icon">🌿</div>
+            <h3>Deodorizing</h3>
+            <p>
+              Freshen up your bin and help reduce unpleasant trash odors.
+            </p>
+          </article>
         </div>
       </div>
     </section>
-
+    <!-- PRICING -->
     <section class="pricing" id="pricing">
       <div class="container">
         <div class="section-heading">
-          <div class="eyebrow">Straightforward Options</div>
-          <h2>Sample Pricing</h2>
-          <p>Adjust these prices based on your route, bin count, and cleaning needs.</p>
+          <div class="eyebrow">Simple Pricing</div>
+          <h2>Trash Bin Cleaning</h2>
+          <p>
+            Choose the number of bins you need cleaned and book your service.
+          </p>
         </div>
         <div class="cards">
-          <article class="card"><h3>Single Bin</h3><div class="price">$15</div><ul><li>1 trash bin</li><li>Basic pressure wash</li><li>Freshening treatment</li></ul><a href="#booking" class="btn btn-primary">Choose Plan</a></article>
-          <article class="card"><h3>Two Bins</h3><div class="price">$25</div><ul><li>2 trash bins</li><li>Deep cleaning</li><li>Freshening treatment</li></ul><a href="#booking" class="btn btn-primary">Choose Plan</a></article>
-          <article class="card"><h3>Recurring</h3><div class="price">Custom</div><ul><li>Weekly or monthly options</li><li>Route-based scheduling</li><li>Custom quote</li></ul><a href="#booking" class="btn btn-primary">Request Quote</a></article>
+          <article class="card">
+            <h3>1 Bin</h3>
+            <div class="price">$20</div>
+            <ul>
+              <li>1 trash bin</li>
+              <li>Professional cleaning</li>
+              <li>Inside & outside cleaning</li>
+              <li>25-minute appointment</li>
+            </ul>
+            <a href="#booking" class="btn btn-primary">
+              Book 1 Bin
+            </a>
+          </article>
+          <article class="card">
+            <h3>2 Bins</h3>
+            <div class="price">$35</div>
+            <ul>
+              <li>2 trash bins</li>
+              <li>Professional cleaning</li>
+              <li>Inside & outside cleaning</li>
+              <li>45-minute appointment</li>
+            </ul>
+            <a href="#booking" class="btn btn-primary">
+              Book 2 Bins
+            </a>
+          </article>
+          <article class="card">
+            <h3>Recurring Cleaning</h3>
+            <div class="price">Contact Us</div>
+            <ul>
+              <li>Weekly options</li>
+              <li>Monthly options</li>
+              <li>Route-based scheduling</li>
+              <li>Custom service plans</li>
+            </ul>
+            <a href="#booking" class="btn btn-primary">
+              Get Started
+            </a>
+          </article>
         </div>
       </div>
     </section>
-
+    <!-- ABOUT -->
     <section id="about">
       <div class="container about-grid">
         <div class="about-box">
           <div class="eyebrow">Why BIN BLAST AZ</div>
-          <h2>A cleaner bin starts here.</h2>
-          <p>We’re focused on convenient, affordable trash-bin cleaning for customers in Phoenix, Arizona.</p>
+          <h2>
+            A cleaner bin starts here.
+          </h2>
+          <p>
+            We're focused on convenient, affordable trash-bin cleaning
+            for customers in Phoenix, Arizona.
+          </p>
           <ul class="checks">
             <li>✅ Convenient booking</li>
             <li>✅ Friendly local service</li>
@@ -246,66 +515,153 @@
           <div class="section-heading" style="text-align:left; margin:0;">
             <div class="eyebrow">Service Area</div>
             <h2>Phoenix, Arizona</h2>
-            <p>We serve customers throughout Phoenix and can expand service areas as the business grows.</p>
+            <p>
+              We serve customers throughout Phoenix and can expand
+              service areas as the business grows.
+            </p>
           </div>
         </div>
       </div>
     </section>
-
+    <!-- BOOKING -->
     <section class="booking" id="booking">
       <div class="container">
         <div class="section-heading">
-          <div class="eyebrow">Get Started</div>
-          <h2>Book a Cleaning</h2>
-          <p>Send your details below. This demo form opens your email app with the request prepared.</p>
+          <div class="eyebrow">Book Online</div>
+          <h2>Choose Your Cleaning</h2>
+          <p>
+            Select your bin count and we'll take you to our secure
+            booking page to choose your available date and time.
+          </p>
         </div>
-        <form onsubmit="submitBooking(event)">
-          <div class="form-grid">
-            <div><label for="name">Full Name</label><input id="name" required placeholder="Your name" /></div>
-            <div><label for="phone">Phone Number</label><input id="phone" type="tel" required placeholder="(602) 555-0123" /></div>
-            <div><label for="email">Email</label><input id="email" type="email" placeholder="you@example.com" /></div>
-            <div><label for="service">Service</label><select id="service" required><option value="">Choose a service</option><option>Single Bin - $15</option><option>Two Bins - $25</option><option>Recurring Cleaning</option><option>Custom Quote</option></select></div>
-            <div class="full"><label for="address">Service Address / Area</label><input id="address" required placeholder="Phoenix, Arizona" /></div>
-            <div class="full"><label for="message">Extra Details</label><textarea id="message" placeholder="How many bins do you need cleaned?"></textarea></div>
-            <div class="full"><button class="btn btn-primary" type="submit">Prepare Booking Request</button></div>
+        <div class="booking-options">
+          <!-- 1 BIN WEEKDAY -->
+          <div class="booking-card">
+            <div class="weekend-label">
+              Weekday
+            </div>
+            <h3>1 Bin Cleaning</h3>
+            <div class="booking-price">
+              $20
+            </div>
+            <div class="booking-time">
+              25-minute appointment
+            </div>
+            <a
+              class="btn btn-primary"
+              href="https://binblastaz.zohobookings.com/5011578000000041002"
+              target="_blank"
+              rel="noopener"
+            >
+              Book 1 Bin
+            </a>
           </div>
-          <p class="form-note">Replace the email address in the JavaScript before launching your site.</p>
-        </form>
+          <!-- 2 BINS WEEKDAY -->
+          <div class="booking-card">
+            <div class="weekend-label">
+              Weekday
+            </div>
+            <h3>2 Bin Cleaning</h3>
+            <div class="booking-price">
+              $35
+            </div>
+            <div class="booking-time">
+              45-minute appointment
+            </div>
+            <a
+              class="btn btn-primary"
+              href="https://binblastaz.zohobookings.com/5011578000000041016"
+              target="_blank"
+              rel="noopener"
+            >
+              Book 2 Bins
+            </a>
+          </div>
+          <!-- 1 BIN WEEKEND -->
+          <div class="booking-card">
+            <div class="weekend-label">
+              Weekend
+            </div>
+            <h3>1 Bin Cleaning</h3>
+            <div class="booking-price">
+              $20
+            </div>
+            <div class="booking-time">
+              25-minute appointment
+            </div>
+            <a
+              class="btn btn-primary"
+              href="https://binblastaz.zohobookings.com/5011578000000041052"
+              target="_blank"
+              rel="noopener"
+            >
+              Book 1 Bin
+            </a>
+          </div>
+          <!-- 2 BINS WEEKEND -->
+          <div class="booking-card">
+            <div class="weekend-label">
+              Weekend
+            </div>
+            <h3>2 Bin Cleaning</h3>
+            <div class="booking-price">
+              $35
+            </div>
+            <div class="booking-time">
+              45-minute appointment
+            </div>
+            <a
+              class="btn btn-primary"
+              href="https://binblastaz.zohobookings.com/5011578000000041066"
+              target="_blank"
+              rel="noopener"
+            >
+              Book 2 Bins
+            </a>
+          </div>
+        </div>
+        <p style="
+          text-align:center;
+          color:var(--muted);
+          margin-top:25px;
+          font-size:.9rem;
+        ">
+          📅 Weekday and weekend availability is managed through BIN BLAST AZ's
+          online booking system.
+        </p>
       </div>
     </section>
   </main>
-
+  <!-- FOOTER -->
   <footer>
     <div class="container footer-flex">
-      <div><strong>BIN BLAST AZ</strong><div class="small">Trash Bin Cleaning & Pressure Washing</div></div>
-      <div class="small">Serving Phoenix, Arizona • © <span id="year"></span> BIN BLAST AZ</div>
+      <div>
+        <strong>BIN BLAST AZ</strong>
+        <div class="small">
+          Trash Bin Cleaning & Pressure Washing
+        </div>
+      </div>
+      <div class="small">
+        Serving Phoenix, Arizona • ©
+        <span id="year"></span>
+        BIN BLAST AZ
+      </div>
     </div>
   </footer>
-
   <script>
-    const BUSINESS_EMAIL = "YOUR_EMAIL@example.com";
-
     function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("open");
+      document
+        .getElementById("navLinks")
+        .classList.toggle("open");
     }
     function closeMenu() {
-      document.getElementById("navLinks").classList.remove("open");
+      document
+        .getElementById("navLinks")
+        .classList.remove("open");
     }
-    function submitBooking(event) {
-      event.preventDefault();
-      const name = document.getElementById("name").value;
-      const phone = document.getElementById("phone").value;
-      const email = document.getElementById("email").value;
-      const service = document.getElementById("service").value;
-      const address = document.getElementById("address").value;
-      const message = document.getElementById("message").value;
-      const subject = encodeURIComponent("BIN BLAST AZ Booking Request");
-      const body = encodeURIComponent(
-        `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\nAddress: ${address}\nDetails: ${message}`
-      );
-      window.location.href = `mailto:${BUSINESS_EMAIL}?subject=${subject}&body=${body}`;
-    }
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
   </script>
 </body>
 </html>
+
