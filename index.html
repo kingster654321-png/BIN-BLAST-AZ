@@ -341,7 +341,7 @@
     }
     .policy-box {
       max-width: 850px;
-      margin: auto;
+      margin: 0 auto 25px;
       background: var(--card);
       border: 1px solid rgba(255,255,255,.08);
       border-radius: 22px;
@@ -349,6 +349,11 @@
     }
     .policy-box h3 {
       margin-bottom: 12px;
+      color: var(--white);
+    }
+    .policy-box h4 {
+      margin: 22px 0 8px;
+      color: var(--cyan);
     }
     .policy-box p {
       color: var(--muted);
@@ -360,6 +365,67 @@
     }
     .policy-box li {
       margin: 8px 0;
+    }
+    /* BOOKING AGREEMENT */
+    .agreement-box {
+      max-width: 850px;
+      margin: 30px auto 0;
+      padding: 25px;
+      background: #0a2235;
+      border: 1px solid rgba(103,232,249,.2);
+      border-radius: 20px;
+    }
+    .agreement-box h3 {
+      margin-bottom: 10px;
+    }
+    .agreement-box p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-bottom: 15px;
+    }
+    .agreement-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+      color: var(--white);
+      font-size: .9rem;
+    }
+    .agreement-label input {
+      margin-top: 5px;
+      width: 18px;
+      height: 18px;
+      accent-color: var(--green);
+      flex-shrink: 0;
+    }
+    .agreement-links {
+      color: var(--cyan);
+      text-decoration: underline;
+    }
+    .captcha-box {
+      margin-top: 18px;
+      padding: 18px;
+      border: 1px dashed #486174;
+      border-radius: 12px;
+      background: rgba(4,17,29,.5);
+    }
+    .captcha-box strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .captcha-box span {
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    .agreement-warning {
+      display: none;
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 10px;
+      background: rgba(248,113,113,.1);
+      border: 1px solid rgba(248,113,113,.35);
+      color: #fca5a5;
+      font-size: .9rem;
     }
     /* CONTACT */
     .contact {
@@ -401,6 +467,17 @@
       justify-content: space-between;
       gap: 20px;
       flex-wrap: wrap;
+    }
+    .footer-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .footer-links a {
+      color: var(--cyan);
+      font-size: .85rem;
+      text-decoration: underline;
     }
     .small {
       font-size: .85rem;
@@ -466,6 +543,9 @@
       }
       .booking-card {
         padding: 25px;
+      }
+      .policy-box {
+        padding: 22px;
       }
     }
   </style>
@@ -759,9 +839,9 @@
             Choose Your Cleaning
           </h2>
           <p>
-            Select your bin count and we'll take you
-            to our secure booking page to choose your
-            available date and time.
+            Select your bin count and agree to our
+            service terms before continuing to secure
+            booking.
           </p>
         </div>
         <div class="booking-options">
@@ -779,14 +859,12 @@
             <div class="booking-time">
               25-minute appointment
             </div>
-            <a
+            <button
               class="btn btn-primary"
-              href="https://binblastaz.zohobookings.com/5011578000000041002"
-              target="_blank"
-              rel="noopener noreferrer"
+              onclick="startBooking('https://binblastaz.zohobookings.com/5011578000000041002')"
             >
               Book 1 Bin
-            </a>
+            </button>
           </div>
           <!-- WEEKDAY 2 BINS -->
           <div class="booking-card">
@@ -802,14 +880,12 @@
             <div class="booking-time">
               45-minute appointment
             </div>
-            <a
+            <button
               class="btn btn-primary"
-              href="https://binblastaz.zohobookings.com/5011578000000041016"
-              target="_blank"
-              rel="noopener noreferrer"
+              onclick="startBooking('https://binblastaz.zohobookings.com/5011578000000041016')"
             >
               Book 2 Bins
-            </a>
+            </button>
           </div>
           <!-- WEEKEND 1 BIN -->
           <div class="booking-card">
@@ -825,14 +901,12 @@
             <div class="booking-time">
               25-minute appointment
             </div>
-            <a
+            <button
               class="btn btn-primary"
-              href="https://binblastaz.zohobookings.com/5011578000000041052"
-              target="_blank"
-              rel="noopener noreferrer"
+              onclick="startBooking('https://binblastaz.zohobookings.com/5011578000000041052')"
             >
               Book 1 Bin
-            </a>
+            </button>
           </div>
           <!-- WEEKEND 2 BINS -->
           <div class="booking-card">
@@ -848,14 +922,79 @@
             <div class="booking-time">
               45-minute appointment
             </div>
-            <a
+            <button
               class="btn btn-primary"
-              href="https://binblastaz.zohobookings.com/5011578000000041066"
-              target="_blank"
-              rel="noopener noreferrer"
+              onclick="startBooking('https://binblastaz.zohobookings.com/5011578000000041066')"
             >
               Book 2 Bins
-            </a>
+            </button>
+          </div>
+        </div>
+        <!-- CUSTOMER AGREEMENT -->
+        <div class="agreement-box">
+          <h3>
+            Booking Agreement
+          </h3>
+          <p>
+            Before continuing to our secure booking system,
+            please review and agree to our policies.
+          </p>
+          <label class="agreement-label">
+            <input
+              type="checkbox"
+              id="agreement"
+            />
+            <span>
+              I agree to the
+              <a
+                href="#terms"
+                class="agreement-links"
+              >
+                Terms & Conditions
+              </a>,
+              <a
+                href="#privacy"
+                class="agreement-links"
+              >
+                Privacy Policy
+              </a>,
+              and
+              <a
+                href="#refunds"
+                class="agreement-links"
+              >
+                Cancellation & Refund Policy
+              </a>.
+              I confirm that the information I provide
+              during booking is accurate and that I understand
+              the appointment and service requirements.
+            </span>
+          </label>
+          <!-- CAPTCHA AREA -->
+          <div class="captcha-box">
+            <strong>
+              🛡️ CAPTCHA Security
+            </strong>
+            <span>
+              CAPTCHA protection should be connected to
+              your booking/contact form to help prevent
+              spam and automated bookings.
+            </span>
+            <!--
+              ADD YOUR CAPTCHA PROVIDER HERE.
+              Example:
+              Google reCAPTCHA
+              Cloudflare Turnstile
+              Do NOT place secret/private keys directly
+              into this HTML.
+            -->
+          </div>
+          <div
+            id="agreementWarning"
+            class="agreement-warning"
+          >
+            Please check the agreement box before
+            continuing to the booking page.
           </div>
         </div>
         <p class="booking-note">
@@ -865,52 +1004,335 @@
         </p>
       </div>
     </section>
-    <!-- POLICY -->
-    <section class="policy" id="policy">
+    <!-- TERMS & CONDITIONS -->
+    <section class="policy" id="terms">
       <div class="container">
         <div class="section-heading">
           <div class="eyebrow">
-            Before Your Appointment
+            Legal
           </div>
           <h2>
-            Service Policy
+            Terms & Conditions
           </h2>
           <p>
-            A few simple things to know before booking.
+            Please review these terms before booking.
           </p>
         </div>
         <div class="policy-box">
           <h3>
-            Appointment & Cancellation Policy
+            BIN BLAST AZ — Terms & Conditions
           </h3>
           <p>
-            Please make sure the information entered
-            during booking is accurate and that someone
-            is available for the scheduled service.
+            <strong>Effective Date:</strong>
+            September 21, 2026
           </p>
+          <h4>
+            1. Services
+          </h4>
+          <p>
+            BIN BLAST AZ provides trash-bin cleaning
+            and pressure-washing services. Services are
+            scheduled through our online booking system
+            and are subject to availability.
+          </p>
+          <h4>
+            2. Pricing
+          </h4>
+          <p>
+            Current service pricing is displayed during
+            the booking process. Any additional services
+            or charges will be communicated to the customer
+            before being performed.
+          </p>
+          <h4>
+            3. Appointments
+          </h4>
+          <p>
+            Customers are responsible for selecting the
+            correct date, time, service, and number of bins.
+            Trash bins should be accessible and available
+            at the scheduled appointment time.
+          </p>
+          <h4>
+            4. Customer Responsibilities
+          </h4>
           <ul>
-            <li>
-              Customers should provide access to the
-              trash bins at the scheduled appointment time.
-            </li>
-            <li>
-              Please have the bins accessible and free
-              of personal items.
-            </li>
-            <li>
-              If you need to cancel or reschedule,
-              please do so as early as possible.
-            </li>
-            <li>
-              Missed appointments may require
-              rescheduling before another appointment
-              is accepted.
-            </li>
-            <li>
-              Severe weather or unsafe conditions may
-              require an appointment to be rescheduled.
-            </li>
+            <li>Provide accurate contact and booking information.</li>
+            <li>Make sure the trash bins are accessible.</li>
+            <li>Remove trash, loose items, and prohibited materials before cleaning.</li>
+            <li>Inform BIN BLAST AZ about damaged or unusual bins before service.</li>
           </ul>
+          <h4>
+            5. Prohibited Materials
+          </h4>
+          <p>
+            BIN BLAST AZ does not accept or handle hazardous
+            materials, chemicals, medical waste, sharp objects,
+            or other dangerous materials during the cleaning process.
+          </p>
+          <h4>
+            6. Service Results
+          </h4>
+          <p>
+            Cleaning can significantly improve the appearance
+            and cleanliness of a trash bin, but BIN BLAST AZ
+            does not guarantee that every stain, odor, residue,
+            or buildup will be completely removed.
+          </p>
+          <h4>
+            7. Property & Damage
+          </h4>
+          <p>
+            BIN BLAST AZ will take reasonable care while
+            providing services. Customers should inform BIN BLAST AZ
+            before service about damaged, cracked, unusually
+            fragile, or defective bins.
+          </p>
+          <h4>
+            8. Payment
+          </h4>
+          <p>
+            Payment is required according to the payment method
+            and terms presented during checkout or booking.
+          </p>
+          <h4>
+            9. Cancellations, Refunds & No-Shows
+          </h4>
+          <p>
+            Cancellations and refunds are governed by the
+            BIN BLAST AZ Cancellation & Refund Policy.
+          </p>
+          <h4>
+            10. Changes to Services or Terms
+          </h4>
+          <p>
+            BIN BLAST AZ may update its services, prices,
+            booking procedures, or these Terms & Conditions
+            from time to time.
+          </p>
+          <h4>
+            11. Agreement
+          </h4>
+          <p>
+            By booking a service, the customer confirms that
+            they have read, understood, and agreed to these
+            Terms & Conditions.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- PRIVACY POLICY -->
+    <section class="policy" id="privacy">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">
+            Legal
+          </div>
+          <h2>
+            Privacy Policy
+          </h2>
+          <p>
+            How BIN BLAST AZ handles information submitted
+            through the website.
+          </p>
+        </div>
+        <div class="policy-box">
+          <h3>
+            BIN BLAST AZ — Privacy Policy
+          </h3>
+          <p>
+            <strong>Effective Date:</strong>
+            September 21, 2026
+          </p>
+          <h4>
+            1. Information We Collect
+          </h4>
+          <p>
+            When you contact or book with BIN BLAST AZ,
+            we may collect information such as your name,
+            phone number, email address, service address,
+            appointment information, number of trash bins,
+            and payment or transaction information.
+          </p>
+          <h4>
+            2. How We Use Information
+          </h4>
+          <ul>
+            <li>Schedule and manage appointments.</li>
+            <li>Contact you about your appointment.</li>
+            <li>Process or confirm payments.</li>
+            <li>Respond to questions or requests.</li>
+            <li>Provide and improve our services.</li>
+            <li>Prevent spam, fraud, or misuse of our website.</li>
+          </ul>
+          <h4>
+            3. Payment Information
+          </h4>
+          <p>
+            Payments may be processed through third-party
+            payment providers. BIN BLAST AZ does not
+            intentionally store complete payment-card
+            information on its own website.
+          </p>
+          <h4>
+            4. Website Services
+          </h4>
+          <p>
+            Our website may use third-party services for
+            booking, forms, payments, CAPTCHA, analytics,
+            or other website functions. These services may
+            collect information as necessary to provide
+            their functions.
+          </p>
+          <h4>
+            5. CAPTCHA
+          </h4>
+          <p>
+            Our website may use CAPTCHA or similar security
+            technology to help prevent spam, bots, and
+            fraudulent activity. CAPTCHA services may collect
+            technical information about your device and your
+            interaction with the CAPTCHA.
+          </p>
+          <h4>
+            6. Information Sharing
+          </h4>
+          <p>
+            BIN BLAST AZ does not sell your personal information.
+            Information may be shared with service providers
+            when necessary to operate our website, process
+            payments, manage bookings, communicate with customers,
+            or provide our services.
+          </p>
+          <h4>
+            7. Data Security
+          </h4>
+          <p>
+            We take reasonable measures to protect information
+            submitted through our website. However, no online
+            system can be guaranteed to be completely secure.
+          </p>
+          <h4>
+            8. Children's Privacy
+          </h4>
+          <p>
+            Our website is intended for general customers and
+            is not designed to knowingly collect personal
+            information from children without appropriate permission.
+          </p>
+          <h4>
+            9. Changes to This Policy
+          </h4>
+          <p>
+            This Privacy Policy may be updated from time to time.
+            Updates will be posted on this page with a revised
+            effective date.
+          </p>
+          <h4>
+            10. Contact
+          </h4>
+          <p>
+            For privacy questions or requests, contact
+            BIN BLAST AZ through the contact information
+            provided on our website.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- CANCELLATION & REFUND POLICY -->
+    <section class="policy" id="refunds">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">
+            Legal
+          </div>
+          <h2>
+            Cancellation & Refund Policy
+          </h2>
+          <p>
+            Please review this policy before booking.
+          </p>
+        </div>
+        <div class="policy-box">
+          <h3>
+            BIN BLAST AZ — Cancellation & Refund Policy
+          </h3>
+          <p>
+            <strong>Effective Date:</strong>
+            September 21, 2026
+          </p>
+          <h4>
+            1. Customer Cancellations
+          </h4>
+          <p>
+            Customers may cancel or request to reschedule
+            an appointment before the scheduled service time.
+            Please contact BIN BLAST AZ as soon as possible.
+          </p>
+          <h4>
+            2. Refunds
+          </h4>
+          <p>
+            If a customer cancels before the scheduled appointment
+            and is eligible for a refund, the refund will be
+            issued to the original payment method.
+          </p>
+          <h4>
+            3. Late Cancellations
+          </h4>
+          <p>
+            Cancellations made shortly before the scheduled
+            appointment may be subject to a cancellation fee
+            or may not qualify for a full refund if BIN BLAST AZ
+            has already reserved time or incurred costs for
+            the appointment.
+          </p>
+          <h4>
+            4. No-Shows
+          </h4>
+          <p>
+            If the customer is unavailable at the scheduled
+            appointment time or the trash bins cannot be accessed,
+            BIN BLAST AZ may treat the appointment as a no-show.
+          </p>
+          <p>
+            A no-show may be rescheduled, and a refund may not
+            be available if time or travel costs have already
+            been incurred.
+          </p>
+          <h4>
+            5. BIN BLAST AZ Cancellations
+          </h4>
+          <p>
+            If BIN BLAST AZ must cancel an appointment because
+            of weather, equipment problems, safety concerns,
+            or another circumstance outside the customer's control,
+            the customer may be offered a rescheduled appointment
+            or refund, as applicable.
+          </p>
+          <h4>
+            6. Weather & Safety
+          </h4>
+          <p>
+            Services may be delayed or rescheduled when weather
+            or other conditions make cleaning unsafe or impractical.
+          </p>
+          <h4>
+            7. Refund Requests
+          </h4>
+          <p>
+            Customers requesting a refund should contact
+            BIN BLAST AZ and provide their name, appointment
+            information, and reason for the request.
+          </p>
+          <h4>
+            8. Agreement
+          </h4>
+          <p>
+            By booking a BIN BLAST AZ service, the customer
+            acknowledges and agrees to this Cancellation &
+            Refund Policy.
+          </p>
         </div>
       </div>
     </section>
@@ -986,6 +1408,17 @@
         <div class="small">
           Trash Bin Cleaning & Pressure Washing
         </div>
+        <div class="footer-links">
+          <a href="#terms">
+            Terms & Conditions
+          </a>
+          <a href="#privacy">
+            Privacy Policy
+          </a>
+          <a href="#refunds">
+            Cancellation & Refund
+          </a>
+        </div>
       </div>
       <div class="small">
         Serving Phoenix, Arizona • ©
@@ -995,6 +1428,7 @@
     </div>
   </footer>
   <script>
+    /* MOBILE MENU */
     function toggleMenu() {
       const navLinks =
         document.getElementById("navLinks");
@@ -1019,6 +1453,39 @@
         "false"
       );
     }
+    /* BOOKING AGREEMENT */
+    function startBooking(bookingURL) {
+      const agreement =
+        document.getElementById("agreement");
+      const warning =
+        document.getElementById("agreementWarning");
+      if (!agreement.checked) {
+        warning.style.display = "block";
+        document
+          .getElementById("booking")
+          .scrollIntoView({
+            behavior: "smooth"
+          });
+        return;
+      }
+      warning.style.display = "none";
+      window.open(
+        bookingURL,
+        "_blank",
+        "noopener,noreferrer"
+      );
+    }
+    /* HIDE WARNING WHEN AGREEMENT IS CHECKED */
+    document
+      .getElementById("agreement")
+      .addEventListener("change", function() {
+        if (this.checked) {
+          document
+            .getElementById("agreementWarning")
+            .style.display = "none";
+        }
+      });
+    /* CURRENT YEAR */
     document.getElementById("year").textContent =
       new Date().getFullYear();
   </script>
