@@ -480,8 +480,61 @@
       text-decoration: underline;
     }
     .small {
+      
+    }
       font-size: .85rem;
     }
+    /* INSTAGRAM CARD */
+.instagram-card {
+  background: linear-gradient(145deg, #102b42, #071a2b);
+  border: 1px solid rgba(14,165,233,.35);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.instagram-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(14,165,233,.2);
+}
+
+.instagram-icon {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  font-size: 2rem;
+}
+
+.instagram-card h3 {
+  margin-bottom: 8px;
+}
+
+.instagram-card p {
+  color: var(--muted);
+  font-size: .95rem;
+  margin-bottom: 20px;
+}
+
+.instagram-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  color: white;
+  font-weight: 800;
+  transition: transform .2s, opacity .2s;
+}
+
+.instagram-btn:hover {
+  transform: translateY(-2px);
+  opacity: .9;
+}
     /* MOBILE */
     @media (max-width: 800px) {
       .hero-grid,
@@ -1388,16 +1441,25 @@
             </div>
             <h3>
               Questions?
-            </h3>
-            <p>
-              Contact BIN BLAST AZ about recurring
-              service or other questions.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+           <div class="instagram-card">
+  <div class="instagram-icon">📸</div>
+
+  <h3>Follow BIN BLAST AZ</h3>
+
+  <p>
+    Follow us on Instagram for cleaning updates,
+    promotions, and more.
+  </p>
+
+  <a
+    href="https://www.instagram.com/binblastaz/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="instagram-btn"
+  >
+    @binblastaz ↗
+  </a>
+</div>
   <!-- FOOTER -->
   <footer>
     <div class="container footer-flex">
